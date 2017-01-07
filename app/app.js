@@ -15,19 +15,18 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'about',
+    'main'
   ])
-  .config(function ($routeProvider) {
+  .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+        templateUrl: 'components/main/main.html',
+        controller: 'MainController'
       })
       .otherwise({
         redirectTo: '/'
       });
-  });
+      $locationProvider.html5Mode({enabled: true});
+  }]);
