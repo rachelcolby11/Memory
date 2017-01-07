@@ -1,11 +1,12 @@
 <h1>Memory</h1>
 
-<div class="row">
-  <div class="card"></div><div class="card"></div><div class="card"></div>
+<div class="card-row" ng-repeat="pokemon in pokemon">
+  <div class="card">
+    <img ng-src="{{pokemon.src}}" />
+  </div>
 </div>
-<div class="row">
-  <div class="card"></div><div class="card"></div><div class="card"></div>
-</div>
-<div class="row">
-  <div class="card"></div><div class="card"></div><div class="card"></div>
+<div class="card-row" ng-repeat="pokemon in pokemon">
+  <div class="card">
+    <img ng-src="{{pokemon.src}}" />
+  </div>
 </div>

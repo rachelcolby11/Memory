@@ -20,6 +20,14 @@ body {
   background-color: blue;
   margin: 2px;
   display: inline-block;
+  img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.card-row {
+  display: inline-block;
 }
 
 /* Responsive: Portrait tablets and up */
