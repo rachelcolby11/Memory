@@ -34,4 +34,26 @@ angular.module('memoryApp')
          src: PIKACHU
        }
      ];
+
+     var currentlyFlipped = 0;
+     var pokemon1;
+
+     $scope.flip = function() {
+       if (currentlyFlipped === 0) {
+         // flip 1st card over
+         currentlyFlipped++;
+         pokemon1 = this.pokemon;
+       } else if (currentlyFlipped === 1) {
+         // flip 2nd card over
+         // check if they match
+         if (this.pokemon === pokemon1) {
+           console.log('Match!');
+           // if they match, remove from the board
+         } else {
+           console.log('Not a match');
+           // if they don't match, flip cards back over
+         }
+         currentlyFlipped = 0;
+       }
+     };
   });

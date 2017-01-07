@@ -1,12 +1,12 @@
 <h1>Memory</h1>
 
 <div class="card-row" ng-repeat="pokemon in pokemon">
-  <div class="card">
+  <div class="card" ng-click="flip()">
     <img ng-src="{{pokemon.src}}" />
   </div>
 </div>
 <div class="card-row" ng-repeat="pokemon in pokemon">
-  <div class="card">
+  <div class="card" ng-click="flip()">
     <img ng-src="{{pokemon.src}}" />
   </div>
 </div>
