@@ -2,11 +2,13 @@
 
 <div class="card-row" ng-repeat="pokemon in pokemon">
   <div class="card" ng-click="flip()">
-    <img ng-src="{{pokemon.src}}" />
+    <img ng-show="front" ng-src="{{pokemon.src}}" />
+    <img ng-show="!front" ng-src="{{pokeball}}" />
   </div>
 </div>
 <div class="card-row" ng-repeat="pokemon in pokemon">
   <div class="card" ng-click="flip()">
-    <img ng-src="{{pokemon.src}}" />
+    <img ng-show="front" ng-src="{{pokemon.src}}" />
+    <img ng-show="!front" ng-src="{{pokeball}}" />
   </div>
 </div>

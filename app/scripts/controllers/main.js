@@ -16,6 +16,9 @@ angular.module('memoryApp')
     const SQUIRTLE = 'http://cdn.bulbagarden.net/upload/thumb/3/39/007Squirtle.png/250px-007Squirtle.png';
     const PIKACHU = 'http://cdn.bulbagarden.net/upload/0/0d/025Pikachu.png';
 
+    // The back of the cards
+    $scope.pokeball = 'http://vignette3.wikia.nocookie.net/youtubepoop/images/4/4c/Pokeball.png/revision/latest';
+
     $scope.pokemon = [
        {
          name: 'Bulbasaur',
@@ -41,10 +44,12 @@ angular.module('memoryApp')
      $scope.flip = function() {
        if (currentlyFlipped === 0) {
          // flip 1st card over
+         this.front = true;
          currentlyFlipped++;
          pokemon1 = this.pokemon;
        } else if (currentlyFlipped === 1) {
          // flip 2nd card over
+         this.front = true;
          // check if they match
          if (this.pokemon === pokemon1) {
            console.log('Match!');
