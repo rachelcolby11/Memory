@@ -40,6 +40,19 @@ angular.module('memoryApp')
 
      var currentlyFlipped = [];
 
+     var compare = function(card1, card2) {
+       if (card1.pokemon === card2.pokemon) {
+         // if they match, remove from the board
+         card1.remove = true;
+         card2.remove = true;
+       } else {
+         // if they don't match, flip cards back over
+         card1.front = false;
+         card2.front = false;
+       }
+       currentlyFlipped = [];
+     };
+
      $scope.flip = function() {
        if (currentlyFlipped.length === 0) {
          // flip 1st card over
@@ -50,18 +63,7 @@ angular.module('memoryApp')
          this.front = true;
          currentlyFlipped.push(this);
          // check if they match
-        $timeout(function() {
-           if (currentlyFlipped[0].pokemon === currentlyFlipped[1].pokemon) {
-             // if they match, remove from the board
-             currentlyFlipped[0].remove = true;
-             currentlyFlipped[1].remove = true;
-           } else {
-             // if they don't match, flip cards back over
-             currentlyFlipped[0].front = false;
-             currentlyFlipped[1].front = false;
-           }
-           currentlyFlipped = [];
-       }, 1000);
+         $timeout( function(){ compare(currentlyFlipped[0], currentlyFlipped[1]); }, 1000);
       }
      };
   });
