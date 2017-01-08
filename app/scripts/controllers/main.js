@@ -39,16 +39,19 @@ angular.module('memoryApp')
      ];
 
      var currentlyFlipped = [];
+     $scope.score = 0;
 
      var compare = function(card1, card2) {
        if (card1.pokemon === card2.pokemon) {
-         // if they match, remove from the board
+         // if they match, remove from the board and increment score
          card1.remove = true;
          card2.remove = true;
+         $scope.score++;
        } else {
-         // if they don't match, flip cards back over
+         // if they don't match, flip cards back over and decrement score
          card1.front = false;
          card2.front = false;
+         $scope.score--;
        }
        currentlyFlipped = [];
      };
