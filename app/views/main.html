@@ -1,15 +1,17 @@
 <h1>Memory</h1>
 
-<div class="card-row" ng-repeat="pokemon in pokemon">
-  <div class="card" ng-click="flip()" ng-class="{space: remove}">
-    <img ng-show="front" ng-src="{{pokemon.src}}" />
-    <img ng-show="!front" ng-src="{{pokeball}}" />
+<div class="card-container">
+  <div class="card-row">
+    <div class="card" ng-repeat="pokemon in pokemon" ng-click="flip()" ng-class="{space: remove}">
+      <img ng-show="front" ng-src="{{pokemon.src}}" />
+      <img ng-show="!front" ng-src="{{pokeball}}" />
+    </div>
   </div>
-</div>
-<div class="card-row" ng-repeat="pokemon in pokemon">
-  <div class="card" ng-click="flip()" ng-class="{space: remove}">
-    <img ng-show="front" ng-src="{{pokemon.src}}" />
-    <img ng-show="!front" ng-src="{{pokeball}}" />
+  <div class="card-row">
+    <div class="card" ng-repeat="pokemon in pokemon" ng-click="flip()" ng-class="{space: remove}">
+      <img ng-show="front" ng-src="{{pokemon.src}}" />
+      <img ng-show="!front" ng-src="{{pokeball}}" />
+    </div>
   </div>
 </div>
 
