@@ -8,8 +8,15 @@
   padding: 0.2em 0;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  height: 96%;
+  margin: 0;
   padding: 0;
+  background-color: #9DBFFF;
 }
 
 h1, h3 {
@@ -20,11 +27,14 @@ h1, h3 {
 .container {
   margin: auto;
   width: 80vw;
+  height: 100%;
 }
 
 .card-container {
   margin: auto;
   width: 100%;
+  border: 6px solid red;
+  background-color: #FFFFFF;
 }
 
 .card {
