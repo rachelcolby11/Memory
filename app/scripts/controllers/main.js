@@ -62,11 +62,16 @@ angular.module('memoryApp')
          this.front = true;
          currentlyFlipped.push(this);
        } else if (currentlyFlipped.length === 1) {
-         // flip 2nd card over
-         this.front = true;
-         currentlyFlipped.push(this);
-         // check if they match
-         $timeout( function(){ compare(currentlyFlipped[0], currentlyFlipped[1]); }, 1000);
-      }
+         // if clicking on same card a second time, do nothing
+         if (currentlyFlipped[0] === this) {
+           return;
+         } else {
+           // flip 2nd card over
+           this.front = true;
+           currentlyFlipped.push(this);
+           // check if they match
+           $timeout( function(){ compare(currentlyFlipped[0], currentlyFlipped[1]); }, 1000);
+         }
+       }
      };
   });
