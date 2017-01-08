@@ -8,7 +8,7 @@
  * Controller of the memoryApp
  */
 angular.module('memoryApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', function ($scope, $timeout) {
 
     // The front of the cards
     const BULBASAUR = 'http://cdn.bulbagarden.net/upload/2/21/001Bulbasaur.png';
@@ -50,16 +50,18 @@ angular.module('memoryApp')
          this.front = true;
          currentlyFlipped.push(this);
          // check if they match
-         if (currentlyFlipped[0].pokemon === currentlyFlipped[1].pokemon) {
-           // if they match, remove from the board
-           currentlyFlipped[0].remove = true;
-           currentlyFlipped[1].remove = true;
-         } else {
-           // if they don't match, flip cards back over
-           currentlyFlipped[0].front = false;
-           currentlyFlipped[1].front = false;
-         }
-         currentlyFlipped = [];
-       }
+        $timeout(function() {
+           if (currentlyFlipped[0].pokemon === currentlyFlipped[1].pokemon) {
+             // if they match, remove from the board
+             currentlyFlipped[0].remove = true;
+             currentlyFlipped[1].remove = true;
+           } else {
+             // if they don't match, flip cards back over
+             currentlyFlipped[0].front = false;
+             currentlyFlipped[1].front = false;
+           }
+           currentlyFlipped = [];
+       }, 1000);
+      }
      };
   });
