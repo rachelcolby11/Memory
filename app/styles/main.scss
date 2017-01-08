@@ -28,6 +28,12 @@ body {
 
 .card-row {
   display: inline-block;
+  .space {
+    background-color: #FFF;
+    img {
+      display: none;
+    }
+  }
 }
 
 /* Responsive: Portrait tablets and up */

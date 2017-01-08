@@ -38,27 +38,28 @@ angular.module('memoryApp')
        }
      ];
 
-     var currentlyFlipped = 0;
-     var pokemon1;
+     var currentlyFlipped = [];
 
      $scope.flip = function() {
-       if (currentlyFlipped === 0) {
+       if (currentlyFlipped.length === 0) {
          // flip 1st card over
          this.front = true;
-         currentlyFlipped++;
-         pokemon1 = this.pokemon;
-       } else if (currentlyFlipped === 1) {
+         currentlyFlipped.push(this);
+       } else if (currentlyFlipped.length === 1) {
          // flip 2nd card over
          this.front = true;
+         currentlyFlipped.push(this);
          // check if they match
-         if (this.pokemon === pokemon1) {
-           console.log('Match!');
+         if (currentlyFlipped[0].pokemon === currentlyFlipped[1].pokemon) {
            // if they match, remove from the board
+           currentlyFlipped[0].remove = true;
+           currentlyFlipped[1].remove = true;
          } else {
-           console.log('Not a match');
            // if they don't match, flip cards back over
+           currentlyFlipped[0].front = false;
+           currentlyFlipped[1].front = false;
          }
-         currentlyFlipped = 0;
+         currentlyFlipped = [];
        }
      };
   });
