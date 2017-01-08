@@ -50,9 +50,36 @@ h1, h3 {
   }
 }
 
-/* Responsive: Portrait tablets and up */
+/* Responsive: Portrait tablets to medium-sized screens */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    width: 56vw;
+  }
+
+  .card-container {
+    width: 100%;
+  }
+
+  .card {
+    width: 12vw;
+    height: 12vw;
+    margin: 1vw;
+  }
+}
+
+/* Responsive: large screens */
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 36vw;
+  }
+
+  .card-container {
+    width: 100%;
+  }
+
+  .card {
+    width: 8vw;
+    height: 8vw;
+    margin: .5vw;
   }
 }
