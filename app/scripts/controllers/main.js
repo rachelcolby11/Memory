@@ -19,30 +19,13 @@ angular.module('memoryApp')
     // The back of the cards
     $scope.pokeball = 'http://vignette3.wikia.nocookie.net/youtubepoop/images/4/4c/Pokeball.png/revision/latest';
 
-    $scope.pokemon = [
-       {
-         name: 'Bulbasaur',
-         src: BULBASAUR
-       },
-       {
-         name: 'Charmander',
-         src: CHARMANDER
-       },
-       {
-         name: 'Squirtle',
-         src: SQUIRTLE
-       },
-       {
-         name: 'Pikachu',
-         src: PIKACHU
-       }
-     ];
+    $scope.pokemonSrcs = [BULBASAUR, CHARMANDER, SQUIRTLE, PIKACHU];
 
      var currentlyFlipped = [];
      $scope.score = 0;
 
      var compare = function(card1, card2) {
-       if (card1.pokemon === card2.pokemon) {
+       if (card1.src === card2.src) {
          // if they match, remove from the board and increment score
          card1.remove = true;
          card2.remove = true;

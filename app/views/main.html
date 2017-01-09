@@ -2,14 +2,14 @@
 
 <div class="card-container">
   <div class="card-row">
-    <div class="card" ng-repeat="pokemon in pokemon" ng-click="flip()" ng-class="{space: remove}">
-      <img ng-show="front" ng-src="{{pokemon.src}}" />
+    <div class="card" ng-repeat="src in pokemonSrcs" ng-click="flip()" ng-class="{space: remove}">
+      <img ng-show="front" ng-src="{{src}}" />
       <img ng-show="!front" ng-src="{{pokeball}}" />
     </div>
   </div>
   <div class="card-row">
-    <div class="card" ng-repeat="pokemon in pokemon" ng-click="flip()" ng-class="{space: remove}">
-      <img ng-show="front" ng-src="{{pokemon.src}}" />
+    <div class="card" ng-repeat="src in pokemonSrcs" ng-click="flip()" ng-class="{space: remove}">
+      <img ng-show="front" ng-src="{{src}}" />
       <img ng-show="!front" ng-src="{{pokeball}}" />
     </div>
   </div>
