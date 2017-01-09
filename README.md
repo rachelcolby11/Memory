@@ -4,6 +4,8 @@ A Pokemon-themed concentration game built using [AngularJS](https://angularjs.or
 
 Scoring: Players get one point for each correct guess and lose a point for each incorrect guess.
 
+![screenshot](app/images/memoryscreenshot.png)
+
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.11.1.
 
