@@ -19,7 +19,24 @@ angular.module('memoryApp')
     // The back of the cards
     $scope.pokeball = 'http://vignette3.wikia.nocookie.net/youtubepoop/images/4/4c/Pokeball.png/revision/latest';
 
-    $scope.pokemonSrcs = [BULBASAUR, CHARMANDER, SQUIRTLE, PIKACHU];
+    var pokemonSrcs = [BULBASAUR, CHARMANDER, SQUIRTLE, PIKACHU];
+
+    var pokemonToShuffle = pokemonSrcs.concat(pokemonSrcs);
+
+    var shuffle = function(array) {
+      for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+      return array;
+    };
+
+    var shuffledPokemonSrcs = shuffle(pokemonToShuffle);
+
+    $scope.pokemonRow1 = shuffledPokemonSrcs.slice(0,4);
+    $scope.pokemonRow2 = shuffledPokemonSrcs.slice(4);
 
      var currentlyFlipped = [];
      $scope.score = 0;
